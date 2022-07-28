@@ -41,7 +41,7 @@ public class MainClass {
             answer = sc.next();
 
             // 난수로 홀 / 짝 생성
-            ranMarble = random.nextInt(10) + 1;
+            ranMarble = random.nextInt(20 - userMarble) + 1;
             isOdd = ranMarble % 2 == 0 ? "짝" : "홀";
             System.out.println("컴퓨터가 선택한 구슬 갯수 : " + ranMarble + isOdd);
 
