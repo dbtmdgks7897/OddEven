@@ -41,7 +41,7 @@ public class SecondMainClass {
                         }
                     }catch (Exception e){
                         System.out.println("숫자만 입력하세요");
-                        sc.nextLine();
+                        sc.nextLine(); //엔터키 값 처리(버퍼)
                     }
 
                 }else{
@@ -53,14 +53,20 @@ public class SecondMainClass {
             // 난수 생성
             ranMarble = random.nextInt(Math.min(comMarble, userMarble)) * random.nextInt(Math.min(comMarble, userMarble)) % 10 + 1;
 
-
             // User 정답 입력 / 문제 내기
             if(isMyTurn) {
                 System.out.print("홀 / 짝 예측( 홀 / 짝 ) : ");
             }else{
                 System.out.print("문제 내기( 홀 / 짝 ) : ");
             }
-            answer = sc.next();
+
+            while(true){
+                answer = sc.next();
+                if(answer.contains("홀") || answer.contains("짝")){
+                    break;
+                }
+            }
+
 
             // 홀 / 짝 판별
             isOdd = ranMarble % 2 == 0 ? "짝" : "홀";
@@ -73,6 +79,7 @@ public class SecondMainClass {
 
 
             // 정답 / 오답 판별 후 구슬 더하거나 빼기
+
             if(answer.equals(isOdd)){
                 System.out.println("\n정답");
                 userMarble += betMarble;
