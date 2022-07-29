@@ -43,25 +43,25 @@ public class SecondMainClass {
                 }
             }
 
-            // 난수로 홀 / 짝 생성
+            // 난수 생성
             ranMarble = random.nextInt(Math.min(comMarble, userMarble)) * random.nextInt(Math.min(comMarble, userMarble)) % 10 + 1;
 
+
+            // User 정답 입력 / 문제 내기
             if(isMyTurn) {
-                // User 정답 입력
                 System.out.print("홀 / 짝 예측( 홀 / 짝 ) : ");
             }else{
-                // User가 문제 내기
-                System.out.print("문제 내기 : ");
+                System.out.print("문제 내기( 홀 / 짝 ) : ");
             }
             answer = sc.next();
 
-
+            // 홀 / 짝 판별
             isOdd = ranMarble % 2 == 0 ? "짝" : "홀";
             System.out.println("컴퓨터가 선택한 구슬 갯수 : " + ranMarble + isOdd);
 
             if(!isMyTurn){
+                System.out.println("상대방 배팅 : " + betMarble);
                 betMarble *= -1;
-                System.out.println("상대방 배팅 : " + ranMarble);
             }
 
 
@@ -76,6 +76,7 @@ public class SecondMainClass {
                 comMarble += betMarble;
             }
 
+            //턴 넘기기
             isMyTurn = !isMyTurn;
             System.out.println();
             System.out.println("현재 구슬 갯수 : " + userMarble);
