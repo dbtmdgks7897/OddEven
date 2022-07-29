@@ -16,13 +16,14 @@ public class SecondMainClass {
         random.setSeed(System.currentTimeMillis());
 
         Scanner sc = new Scanner(System.in); // Scanner Class 가져오기
+
         // 인트로
         System.out.println("홀짝 게임");
         System.out.println("두 명의 참가자가 각각 10개의 구슬 보유");
         System.out.println("10개의 구슬을 다 잃을 시 사망");
         System.out.println("게임 시작");
 
-
+        // 게임 실행
         while (true){
             // 구슬 베팅
             while(true){
