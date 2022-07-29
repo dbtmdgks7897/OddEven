@@ -51,7 +51,8 @@ public class SecondMainClass {
             }
 
             // 난수 생성
-            ranMarble = random.nextInt(Math.min(comMarble, userMarble)) * random.nextInt(Math.min(comMarble, userMarble)) % 10 + 1;
+            ranMarble = random.nextInt(Math.min(comMarble, userMarble));
+            ranMarble = ranMarble * ranMarble % ranMarble + 1;
 
             // User 정답 입력 / 문제 내기
             while(true){
@@ -104,6 +105,6 @@ public class SecondMainClass {
                 System.out.println("이김");
                 break;
             }
-        }
+        } // while (true)
     }
 }
