@@ -28,16 +28,21 @@ public class SecondMainClass {
             // 구슬 베팅
             while(true){
                 if(isMyTurn) {
-                    System.out.print("배팅할 구슬의 갯수 : ");
-                    betMarble = sc.nextInt(); // 숫자 스캔 후 입력 받기
-                    if (betMarble > userMarble) {
-                        System.out.println("구슬 갯수 초과 ");
-                    } else if (betMarble > comMarble) {
-                        System.out.println("상대 구슬 갯수 모자람");
-                    } else {
-                        System.out.println("배팅된 구슬 갯수 : " + betMarble);
-                        break;
+                    try {
+                        System.out.print("배팅할 구슬의 갯수 : ");
+                        betMarble = sc.nextInt(); // 숫자 스캔 후 입력 받기
+                        if (betMarble > userMarble) {
+                            System.out.println("구슬 갯수 초과 ");
+                        } else if (betMarble > comMarble) {
+                            System.out.println("상대 구슬 갯수 모자람");
+                        } else {
+                            System.out.println("배팅된 구슬 갯수 : " + betMarble);
+                            break;
+                        }
+                    }catch (Exception e){
+                        System.out.println("숫자만 입력하세요");
                     }
+
                 }else{
                     betMarble = random.nextInt(Math.min(comMarble, userMarble)) + 1;
                     break;
