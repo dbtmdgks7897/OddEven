@@ -41,6 +41,7 @@ public class SecondMainClass {
                         }
                     }catch (Exception e){
                         System.out.println("숫자만 입력하세요");
+                        sc.nextLine();
                     }
 
                 }else{
@@ -73,18 +74,18 @@ public class SecondMainClass {
 
             // 정답 / 오답 판별 후 구슬 더하거나 빼기
             if(answer.equals(isOdd)){
-                System.out.println("정답");
+                System.out.println("\n정답");
                 userMarble += betMarble;
                 comMarble -= betMarble;
             }else {
-                System.out.println("오답");
+                System.out.println("\n오답");
                 userMarble -= betMarble;
                 comMarble += betMarble;
             }
 
             //턴 넘기기
             isMyTurn = !isMyTurn;
-            System.out.println();
+            System.out.println("\n");
             System.out.println("현재 구슬 갯수 : " + userMarble);
             System.out.println("상대 구슬 갯수 : " + comMarble);
 
