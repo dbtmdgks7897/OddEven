@@ -54,17 +54,17 @@ public class SecondMainClass {
             ranMarble = random.nextInt(Math.min(comMarble, userMarble)) * random.nextInt(Math.min(comMarble, userMarble)) % 10 + 1;
 
             // User 정답 입력 / 문제 내기
-            if(isMyTurn) {
-                System.out.print("홀 / 짝 예측( 홀 / 짝 ) : ");
-            }else{
-                System.out.print("문제 내기( 홀 / 짝 ) : ");
-            }
-
             while(true){
+                if(isMyTurn) {
+                    System.out.print("홀 / 짝 예측( 홀 / 짝 ) : ");
+                }else{
+                    System.out.print("문제 내기( 홀 / 짝 ) : ");
+                }
                 answer = sc.next();
                 if(answer.contains("홀") || answer.contains("짝")){
                     break;
                 }
+                System.out.println("입력 오류");
             }
 
 
